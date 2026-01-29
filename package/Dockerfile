@@ -7,7 +7,7 @@ RUN zypper update --no-confirm && \
 
 ARG TARGETPLATFORM
 
-RUN if [ "$TARGETPLATFORM" != "linux/amd64" ] && [ "$TARGETPLATFORM" != "linux/arm64" ]; then \
+RUN if [ "$TARGETPLATFORM" != "linux/amd64" ] && [ "$TARGETPLATFORM" != "linux/arm64" ] && [ "$TARGETPLATFORM" != "linux/s390x" ]; then \
     echo "Error: Unsupported TARGETPLATFORM: $TARGETPLATFORM" && \
     exit 1; \
     fi

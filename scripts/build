@@ -12,6 +12,6 @@ fi
 LINKFLAGS="-X github.com/harvester/harvester-csi-driver/pkg/version.Version=$VERSION"
 LINKFLAGS="-X github.com/harvester/harvester-csi-driver/pkg/version.GitCommit=$COMMIT $LINKFLAGS"
 
-for arch in "amd64" "arm64"; do
+for arch in "amd64" "arm64" "s390x"; do
     GOARCH="$arch" CGO_ENABLED=0 go build -ldflags "$LINKFLAGS $OTHER_LINKFLAGS" -o bin/harvester-csi-driver-"$arch"
 done
