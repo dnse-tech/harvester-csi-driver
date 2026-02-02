@@ -48,7 +48,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run dapper build
-        run: make ci
+        run: make build
 
       - name: Build and push s390x image
         uses: docker/build-push-action@v5
